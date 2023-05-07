@@ -28,6 +28,7 @@ env:
   TAG_LATEST: bullseye
   PLATFORMS: linux/amd64
   BASE_IMG: debian:bullseye
+  DL_URL: https://ftp.jaist.ac.jp/pub/eclipse/technology/epp/downloads/release/2023-03/R/eclipse-modeling-2023-03-R-linux-gtk-x86_64.tar.gz
 
 jobs:
   build:
@@ -84,3 +85,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             base=${{env.BASE_IMG}}
+            eclipse_dl=${{env.DL_URL}}
